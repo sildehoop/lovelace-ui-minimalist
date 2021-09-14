@@ -1,0 +1,43 @@
+### Graph ###
+graph:
+  variables:
+    entity: "sensor.xiaomi_multisensor_salon_humidite"
+    color: "var(--info-color)"
+    name: "Default name"
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow)
+      - padding: 0px
+    grid:
+      - grid-template-areas: '"item1" "item2"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: min-content  min-content
+  custom_fields:
+    item1:
+      card:
+        entity: "[[[ return variables.entity ]]]"
+        name: "[[[ return variables.name ]]]"
+        template:
+          - icon_info
+          - generic
+        styles:
+          card:
+            - padding: 12px
+        type: "custom:button-card"
+    item2:
+      card:
+        type: "custom:mini-graph-card"
+        entities:
+          - entity: "[[[ return variables.entity ]]]"
+        line_color: "[[[ return variables.color ]]]"
+        show:
+          name: false
+          icon: false
+          legend: false
+          state: false
+        style: |
+          ha-card {
+            box-shadow: none;
+            border-radius: var(--border-radius);
+          }

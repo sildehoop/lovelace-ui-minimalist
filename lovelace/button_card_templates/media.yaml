@@ -1,0 +1,168 @@
+### Media ###
+media:
+  label: >-
+    [[[ if (entity.state =='off'){
+          return "Off";
+        }else{
+          return entity.state;
+        }
+    ]]]
+  icon: |
+    [[[
+        var application = entity.attributes.app_name;
+        var icon = 'mdi:speaker';
+        if (application == 'Oto music'){
+          var icon = 'mdi:music-circle';
+        } else if(application == 'Spotify'){
+          var icon = 'mdi:spotify';
+        } else if(application == 'Google Podcasts'){
+          var icon = 'mdi:google-podcast';
+        } else if(application == 'Plex'){
+          var icon = 'mdi:plex';
+        }
+        return icon ;
+    ]]]
+  styles:
+    label:
+      - opacity: "0.6"
+    icon:
+      - color: "rgba(var(--color-theme),0.2)"
+    img_cell:
+      - background-color: "rgba(var(--color-theme),0.05)"
+    card:
+      - background-blend-mode: multiply
+      - background: >
+          [[[
+            var image = entity.attributes.entity_picture;
+            var bg = entity.attributes.entity_picture;
+            if (image == null){
+              var bg = '';
+            } else{
+              var bg = 'center / cover url(' + image + ') rgba(0, 0, 0, 0.15)';
+            }
+            return bg;
+          ]]]
+  state:
+    - operator: template
+      value: >
+        [[[
+          return entity.state !='off'
+        ]]]
+      name: >
+        [[[
+          return entity.attributes.media_title;
+        ]]]
+      label: >
+        [[[
+          return entity.attributes.media_album_name;
+        ]]]
+      styles:
+        label:
+          - color: white
+          - filter: opacity(100%)
+        img_cell:
+          - background-color: "rgba(var(--color-theme),0.0)"
+        icon:
+          - color: white
+        name:
+          - color: white
+
+### Media Mini Album ###
+media_mini_album:
+  label: >-
+    [[[ if (entity.state =='off'){
+          return "Off";
+        }else{
+          return entity.state;
+        }
+    ]]]
+  styles:
+    icon:
+      - color: "rgba(var(--color-theme),0.2)"
+    img_cell:
+      - background-color: "rgba(var(--color-theme),0.05)"
+  state:
+    - operator: template
+      value: >
+        [[[
+          return entity.state !='off'
+        ]]]
+      name: >
+        [[[
+          return entity.attributes.media_title;
+        ]]]
+      label: >
+        [[[
+          return entity.attributes.media_album_name;
+        ]]]
+      styles:
+        img_cell:
+          - background: >
+              [[[
+                var image = entity.attributes.entity_picture;
+                return 'center / cover url(' + image + ')';
+              ]]]
+        icon:
+          - color: "rgba(var(--color-theme),0.0)"
+
+### Media Buttons ###
+media_buttons:
+  variables:
+    entity: "media_player.cuisine"
+    name: "Default name"
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow)
+      - padding: 12px
+    grid:
+      - grid-template-areas: '"item1" "item2"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: min-content  min-content
+      - row-gap: 12px
+  custom_fields:
+    item1:
+      card:
+        entity: "[[[ return variables.entity ]]]"
+        name: "[[[ return variables.name ]]]"
+        tap_action:
+          action: more-info
+        template:
+          - icon_info
+          - media_mini_album
+        type: "custom:button-card"
+    item2:
+      card:
+        template: list_items
+        type: "custom:button-card"
+        custom_fields:
+          item1:
+            card:
+              icon: "mdi:skip-previous"
+              tap_action:
+                action: call-service
+                service: media_player.media_previous_track
+                service_data:
+                  entity_id: "[[[ return variables.entity ]]]"
+              type: "custom:button-card"
+              template: widget_icon
+          item2:
+            card:
+              icon: "mdi:pause"
+              tap_action:
+                action: call-service
+                service: media_player.media_play_pause
+                service_data:
+                  entity_id: "[[[ return variables.entity ]]]"
+              type: "custom:button-card"
+              template: widget_icon
+          item3:
+            card:
+              icon: "mdi:skip-next"
+              tap_action:
+                action: call-service
+                service: media_player.media_next_track
+                service_data:
+                  entity_id: "[[[ return variables.entity ]]]"
+              type: "custom:button-card"
+              template: widget_icon

@@ -1,6 +1,6 @@
-  - title: Consommation
+  - title: consumption
     icon: 'mdi:flash'
-    path: consommation
+    path: consumption
     cards:
       - cards:
           - cards:

@@ -1,0 +1,32 @@
+### Battery ###
+battery:
+  template: generic
+  icon: |
+    [[[
+        var battery = entity.state;
+        var icon = 'mdi:help-circle-outline';
+        if (battery >= 90){
+          var icon = 'mdi:battery';
+        } else if(battery < 90 && battery >= 80){
+          var icon = 'mdi:battery-90';
+        } else if(battery < 80 && battery >= 70){
+          var icon = 'mdi:battery-80️';
+        } else if(battery < 70 && battery >= 60){
+          var icon = 'mdi:battery-70️';
+        } else if(battery < 60 && battery >= 50){
+          var icon = 'mdi:battery-60️';
+        } else if(battery < 50 && battery >= 40){
+          var icon = 'mdi:battery-50️';
+        } else if(battery < 40 && battery >= 30){
+          var icon = 'mdi:battery-40️';
+        } else if(battery < 30 && battery >= 20){
+          var icon = 'mdi:battery-30️';
+        } else if(battery < 20 && battery >= 10){
+          var icon = 'mdi:battery-20️';
+        } else if(battery < 10 && battery >= 0){
+          var icon = 'mdi:battery-10️';
+        } else if(battery == 0){
+          var icon = 'mdi:battery-outline️';
+        }
+         return icon ;
+    ]]]

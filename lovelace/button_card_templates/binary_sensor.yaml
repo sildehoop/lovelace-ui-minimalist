@@ -1,0 +1,5 @@
+### Binary Sensor ###
+binary_sensor:
+  show_last_changed: true
+  template:
+    - blue

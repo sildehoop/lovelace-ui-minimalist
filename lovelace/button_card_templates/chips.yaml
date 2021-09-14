@@ -1,0 +1,161 @@
+### Chips ###
+chips:
+  tap_action:
+    action: more-info
+  show_icon: false
+  show_name: false
+  show_state: false
+  show_label: true
+  size: 80%
+  styles:
+    img_cell:
+      - width: 24px
+    card:
+      - border-radius: 18px
+      - box-shadow: var(--box-shadow)
+      - height: 36px
+      - width: auto
+      - padding-left: 6px
+      - padding-right: 6px
+    grid:
+      - grid-template-areas: '"l"'
+    label:
+      - justify-self: center
+      - padding: 0px 6px
+      - font-weight: bold
+      - font-size: 14px
+
+### Chips Icon ###
+chips_icon:
+  template: chips
+  show_icon: true
+  size: 80%
+  show_state: false
+  variables:
+    icon: "mdi:arrow-left"
+  icon: "[[[ return variables.icon ]]]"
+  styles:
+    grid:
+      - grid-template-areas: '"i l"'
+    label:
+      - justify-self: center
+      - padding: 0px 6px
+      - font-weight: bold
+      - font-size: 14px
+
+### Chips Power Consumption ###
+chips_power_consumption:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/consumption
+  label: |
+    [[[
+      var price = states['sensor.atome_price_conso_today'].state;
+      return '⚡ ' +  price + '€' ;
+    ]]]
+
+### Chips Power Consumption Price ###
+chips_power_consumption_price:
+  template: chips
+  show_icon: false
+  show_state: false
+  show_label: true
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/consumption
+  label: |
+    [[[
+      var price = states['sensor.atome_price_conso_today'].state;
+      var conso = states['sensor.atome_daily'].state;
+      return '⚡ ' +  price + '€ • ' + conso + 'kWh';
+    ]]]
+
+### Chips Temperature ###
+chips_temperature:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/temperature
+  label: |
+    [[[
+      var inter = states['sensor.fibaro_multisensor_salon_temperature'].state;
+      var exter = states['sensor.fibaro_multisensor_balcon_temperature'].state;
+      var icon = '☀️';
+      if (states['sensor.dark_sky_icon'].state == 'clear-day'){
+        var icon = '☀️';
+      } else if(states['sensor.dark_sky_icon'].state == 'clear-night'){
+        var icon = '🌙';
+      } else if(states['sensor.dark_sky_icon'].state == 'rain'){
+        var icon = '🌧️';
+      } else if(states['sensor.dark_sky_icon'].state == 'snow'){
+        var icon = '❄️';
+      } else if(states['sensor.dark_sky_icon'].state == 'sleet'){
+        var icon = '❄️';
+      } else if(states['sensor.dark_sky_icon'].state == 'wind'){
+        var icon = '🌫️';
+      } else if(states['sensor.dark_sky_icon'].state == 'fog'){
+        var icon = '🌫️';
+      } else if(states['sensor.dark_sky_icon'].state == 'cloudy'){
+        var icon = '☁️';
+      } else if(states['sensor.dark_sky_icon'].state == 'partly-cloudy-day'){
+        var icon = '⛅️';
+      } else if(states['sensor.dark_sky_icon'].state == 'partly-cloudy-night'){
+        var icon = '⛅';
+      }
+      return icon + ' ' + exter + '° / ' +  inter + '°' ;
+    ]]]
+
+### Chips location Present ###
+chips_location_present:
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: |
+    [[[
+      var person_presence = states['sensor.people_count_present'].state;
+      return '🏠 ' +  person_presence;
+    ]]]
+  template: chips
+
+### Chips location Absent ###
+chips_location_absent:
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: |
+    [[[
+      var person_presence = states['sensor.people_count_absent'].state;
+      return '🚶 ' +  person_presence;
+    ]]]
+  template: chips
+
+### chips_location_night
+chips_location_night:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: |
+    [[[
+      var person_presence = states['sensor.people_count_night'].state;
+      return '🌙 ' +  person_presence;
+    ]]]
+
+####################################################
+#                                                  #
+#                    RETURN                        #
+#                                                  #
+####################################################
+
+chips_return:
+  template: chips
+  show_icon: true
+  icon: "mdi:arrow-left"
+  size: 80%
+  styles:
+    grid:
+      - grid-template-areas: '"i"'
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/home

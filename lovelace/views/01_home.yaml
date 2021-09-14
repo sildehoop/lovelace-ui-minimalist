@@ -13,7 +13,7 @@
                 variables:
                   icon: "mdi:shield-check"
                 type: 'custom:button-card'
-              - template: chips_localisation_present
+              - template: chips_location_present
                 type: 'custom:button-card'
               - card:
                   entity: input_boolean.invite_present
@@ -70,13 +70,13 @@
                         variables:
                           state: "Travail"
                         type: 'custom:button-card'
-                      - entity: sensor.nuit
+                      - entity: sensor.night
                         template: 
                          - scene
                          - blue
                         tap_action:
                           action: more-info
-                          entity: input_boolean.thomas_nuit
+                          entity: input_boolean.thomas_night
                         type: 'custom:button-card'
                       - template: edge
                         type: 'custom:button-card'

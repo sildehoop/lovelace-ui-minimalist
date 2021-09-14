@@ -1,6 +1,6 @@
-  - title: Localisation
+  - title: location
     icon: 'mdi:map-marker'
-    path: localisation
+    path: location
     cards:
       - cards:
         - cards:
@@ -8,11 +8,11 @@
               type: 'custom:button-card'
             - template: return_button
               type: 'custom:button-card'
-            - template: pilule_localisation_present
+            - template: pilule_location_present
               type: 'custom:button-card'
-            - template: pilule_localisation_absent
+            - template: pilule_location_absent
               type: 'custom:button-card'
-            - template: pilule_localisation_nuit
+            - template: pilule_location_night
               type: 'custom:button-card'
             - card:
                 entity: input_boolean.invite_present
@@ -38,13 +38,13 @@
           
 ####################################################
 #                                                  #
-#                   LOCALISATION                   #
+#                   location                   #
 #                                                  #
 ####################################################
 
         - type: 'custom:button-card'
-          name: Localisation
-          label: '2 personnes'
+          name: location
+          label: '2 person'
           template: titre
         - cards:
             - template: bordures
@@ -53,7 +53,7 @@
               columns: 2
               square: false
               cards:
-                - entity: input_select.localisation_thomas
+                - entity: input_select.location_thomas
                   variables:
                     personne: "thomas"
                   template: 
@@ -61,7 +61,7 @@
                     - personne-thomas
                   name: Thomas
                   type: 'custom:button-card'
-                - entity: input_select.localisation_milena
+                - entity: input_select.location_milena
                   template: 
                     - icon_info_bg
                     - personne-milena

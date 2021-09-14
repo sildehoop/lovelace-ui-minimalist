@@ -1,0 +1,13 @@
+### Outlet ###
+outlet:
+  tap_action:
+    action: toggle
+  label: |-
+    [[[ 
+      return entity.state
+    ]]]
+  # styles:
+  #   label:
+  #     - text-transform: capitalize
+  template:
+    - yellow
