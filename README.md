@@ -9,7 +9,6 @@ I drew a lot of inspiration from [7ahang’s work](https://www.behance.net/galle
 
 
 
-
 ## Table of Contents
 - [Installation](#installation)
 - [Design system](#design-system)
