@@ -724,18 +724,18 @@ light_slider:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/outlet.yaml -->
 ```yaml
 ### Outlet ###
-- entity: switch.YOUR_SWITCH_ENTITY
+- type: 'custom:button-card'
+  entity: switch.YOUR_SWITCH_ENTITY
   name: Prise
-  template: 
-    - icon_info_bg
-    - outlet
   label: >
       [[[ if (entity.state =='on')
           var etat = "On • " + states["sensor.YOUR_SWITCH_POWER_SENSOR"].state + "W"; 
           else
         var etat = "Off";
       return etat ; ]]]
-  type: 'custom:button-card'
+  template: 
+    - icon_info_bg
+    - outlet
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -862,51 +862,12 @@ binary_sensor:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/door.yaml -->
 ```yaml
 ### Door ###
-door:
-  tap_action:
-    action: more-info
-  icon: >
-    [[[
-      if (entity.state == "off")
-        return "mdi:door-closed";
-      if (entity.state == "closed")
-        return "mdi:door-closed";
-      if (entity.state == "on")
-        return "mdi:door-open";
-      if (entity.state == "open")
-        return "mdi:door-open";
-      else
-        return "mdi:alert-circle";
-    ]]]
-  label: >
-    [[[
-      if (entity.state == "off")
-        return "Closed";
-      if (entity.state == "on")
-        return "Open";
-      else
-        return "Unknown";
-    ]]]
-  state:
-    - operator: template
-      value: >
-        [[[
-          return entity.state == "on";
-        ]]]
-      styles:
-        icon:
-          - color: "rgba(var(--color-blue),1)"
-        img_cell:
-          - background-color: "rgba(var(--color-blue),0.2)"
-
-
-
-# - type: "custom:button-card"
-#   entity: binary_sensor.bedroom_master_closed_door
-#   name: YOUR_CUSTOM_NAME
-#   template:
-#     - icon_info_bg
-#     - door
+- type: "custom:button-card"
+  entity: binary_sensor.bedroom_master_closed_door
+  name: YOUR_CUSTOM_NAME
+  template:
+    - icon_info_bg
+    - door
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -953,15 +914,6 @@ door:
           - color: "rgba(var(--color-blue),1)"
         img_cell:
           - background-color: "rgba(var(--color-blue),0.2)"
-
-
-
-# - type: "custom:button-card"
-#   entity: binary_sensor.bedroom_master_closed_door
-#   name: YOUR_CUSTOM_NAME
-#   template:
-#     - icon_info_bg
-#     - door
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1127,11 +1079,11 @@ cover_buttons:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/thermostat.yaml -->
 ```yaml
 ### Thermostat ###
-- entity: climate.example
+- type: 'custom:button-card'
+  entity: climate.example
   template: 
     - icon_info_bg
     - thermostat
-  type: 'custom:button-card'
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1274,12 +1226,12 @@ water_heater:
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates_examples/media.yaml) -->
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/media.yaml -->
 ```yaml
-- entity: media_player.example
+- type: 'custom:button-card'
+  entity: media_player.example
   name: Enceintes
   template: 
     - icon_info_bg
     - media
-  type: 'custom:button-card'
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1480,11 +1432,11 @@ media_buttons:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/playstation.yaml -->
 ```yaml
 ### Playstation ###
-- entity: media_player.example
+- type: 'custom:button-card'
+  entity: media_player.example
   template: 
     - icon_info_bg
     - ps4
-  type: 'custom:button-card'
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1587,14 +1539,14 @@ ps4:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/person.yaml -->
 ```yaml
 ### Person ###
-- entity: input_select.location_thomas
+- type: 'custom:button-card'
+  entity: input_select.location_thomas
+  name: Thomas
   variables:
     personne: "thomas"
   template: 
     - icon_info_bg
     - personne-thomas
-  name: Thomas
-  type: 'custom:button-card'
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1758,11 +1710,11 @@ person_invite:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/generic.yaml -->
 ```yaml
 ### Generic ###
-- entity: sensor.example
+- type: 'custom:button-card'
+  entity: sensor.example
   template: 
     - icon_info_bg
     - generic
-  type: 'custom:button-card'
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -1830,11 +1782,11 @@ generic:
 ```yaml
 ### Graph ###
 - type: 'custom:button-card'
-  template: graph
   variables:
     entity: "sensor.exemple"
     color: "var(--google-blue)"
     name: "Température"
+  template: graph
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
