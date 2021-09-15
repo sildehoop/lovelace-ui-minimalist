@@ -938,10 +938,10 @@ door:
 ```yaml
 ### Cover ###
 - type: 'custom:button-card'
-  template: cover_buttons
   variables:
     entity: "cover.example"
     name: "YOUR_CUSTOM_NAME" #If left empty it wil use entity friendly name
+  template: cover_buttons
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
