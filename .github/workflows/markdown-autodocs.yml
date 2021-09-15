@@ -2,8 +2,8 @@ name: markdown-autodocs
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'README.md'
 
 jobs:        
   auto-update-readme:
