@@ -1,0 +1,8 @@
+### Light Slider ###
+- type: "custom:button-card"
+  entity: light.YOUR_LIGHT_ENTITY
+  variables:
+    entity: "light.YOUR_LIGHT_ENTITY"
+    name: "YOUR_NAME"
+  template:
+    - light_slider

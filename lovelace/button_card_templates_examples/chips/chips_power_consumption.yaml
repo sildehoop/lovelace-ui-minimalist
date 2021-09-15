@@ -1,0 +1,3 @@
+### Chips Power Consumption ###
+- template: chips_power_consumption
+  type: 'custom:button-card'

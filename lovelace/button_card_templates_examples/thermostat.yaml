@@ -1,0 +1,6 @@
+### Thermostat ###
+- entity: climate.example
+  template: 
+    - icon_info_bg
+    - thermostat
+  type: 'custom:button-card'

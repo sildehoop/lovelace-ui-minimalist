@@ -1,0 +1,246 @@
+### Design System ###
+icon:
+  color: var(--google-grey)
+  show_icon: true
+  show_name: false
+  show_label: false
+  size: 20px
+  custom_fields:
+    notification: >
+      [[[
+        if (entity.state =='unavailable'){
+          return `<ha-icon icon="mdi:exclamation" style="width: 12px; height: 12px; color: var(--primary-background-color);"></ha-icon>`
+        }
+      ]]]
+  state:
+    - styles:
+        custom_fields:
+          notification:
+            - border-radius: 50%
+            - position: absolute
+            - left: 24px
+            - top: -2px
+            - height: 16px
+            - width: 16px
+            - border: 2px solid var(--card-background-color)
+            - font-size: 12px
+            - line-height: 14px
+            - background-color: >
+                [[[
+                  return "rgba(var(--color-red),1)";
+                ]]]
+      value: unavailable
+  styles:
+    card:
+      - border-radius: 21px
+      - box-shadow: none
+      - padding: 0px
+    grid:
+      - grid-template-areas: '"i"'
+      - grid-template-columns: min-content
+      - grid-template-rows: min-content
+    icon:
+      - color: "rgba(var(--color-theme),0.2)"
+    img_cell:
+      - background-color: "rgba(var(--color-theme),0.05)"
+      - border-radius: 50%
+      - place-self: center
+      - width: 42px
+      - height: 42px
+
+### Icon Info ###
+
+icon_info:
+  color: var(--google-grey)
+  show_icon: true
+  show_name: true
+  show_label: true
+  size: 20px
+  custom_fields:
+    notification: >
+      [[[
+        if (entity.state =='unavailable'){
+          return `<ha-icon icon="mdi:exclamation" style="width: 12px; height: 12px; color: var(--primary-background-color);"></ha-icon>`
+        }
+      ]]]
+  state:
+    - styles:
+        custom_fields:
+          notification:
+            - border-radius: 50%
+            - position: absolute
+            - left: 24px
+            - top: -2px
+            - height: 16px
+            - width: 16px
+            - border: 2px solid var(--card-background-color)
+            - font-size: 12px
+            - line-height: 14px
+            - background-color: >
+                [[[
+                  return "rgba(var(--color-red),1)";
+                ]]]
+      value: unavailable
+  styles:
+    card:
+      - border-radius: 21px 8px 8px 21px
+      - box-shadow: none
+      - padding: 0px
+      # - background-color: 'rgba(var(--color-theme),0)'
+    grid:
+      - grid-template-areas: '"i n" "i l"'
+      - grid-template-columns: min-content auto
+      - grid-template-rows: min-content min-content
+    icon:
+      - color: "rgba(var(--color-theme),0.2)"
+    img_cell:
+      - background-color: "rgba(var(--color-theme),0.05)"
+      - border-radius: 50%
+      - place-self: center
+      - width: 42px
+      - height: 42px
+    name:
+      - align-self: end
+      - justify-self: start
+      - font-weight: bold
+      - font-size: 14px
+      - margin-left: 12px
+    label:
+      - justify-self: start
+      - align-self: start
+      - font-weight: bolder
+      - font-size: 12px
+      - filter: opacity(40%)
+      - margin-left: 12px
+    state:
+      - justify-self: start
+      - align-self: start
+      - font-weight: bolder
+      - font-size: 12px
+      - filter: opacity(40%)
+      - margin-left: 12px
+
+### Icon Info Bg ###
+
+icon_info_bg:
+  color: var(--google-grey)
+  show_icon: true
+  show_name: true
+  show_label: true
+  size: 20px
+  custom_fields:
+    notification: >
+      [[[
+        if (entity.state =='unavailable'){
+          return `<ha-icon icon="mdi:exclamation" style="width: 12px; height: 12px; color: var(--primary-background-color);"></ha-icon>`
+        }
+      ]]]
+  state:
+    - styles:
+        custom_fields:
+          notification:
+            - border-radius: 50%
+            - position: absolute
+            - left: 38px
+            - top: 8px
+            - height: 16px
+            - width: 16px
+            - border: 2px solid var(--card-background-color)
+            - font-size: 12px
+            - line-height: 14px
+            - background-color: >
+                [[[
+                  return "rgba(var(--color-red),1)";
+                ]]]
+      value: unavailable
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow)
+      - padding: 12px
+    grid:
+      - grid-template-areas: '"i n" "i l"'
+      - grid-template-columns: min-content auto
+      - grid-template-rows: min-content min-content
+    icon:
+      - color: "rgba(var(--color-theme),0.2)"
+    img_cell:
+      - background-color: "rgba(var(--color-theme),0.05)"
+      - border-radius: 50%
+      - place-self: center
+      - width: 42px
+      - height: 42px
+    name:
+      - align-self: end
+      - justify-self: start
+      - font-weight: bold
+      - font-size: 14px
+      - margin-left: 12px
+    label:
+      - justify-self: start
+      - align-self: start
+      - font-weight: bold
+      - font-size: 12px
+      - filter: opacity(40%)
+      - margin-left: 12px
+    state:
+      - justify-self: start
+      - align-self: start
+      - font-weight: bold
+      - font-size: 12px
+      - filter: opacity(40%)
+      - margin-left: 12px
+
+### List Items ###
+
+list_items:
+  styles:
+    card:
+      - box-shadow: none
+      - padding: 0px
+    grid:
+      - grid-template-areas: '"item1 item2 item3"'
+      - grid-template-columns: 1fr 1fr 1fr
+      - grid-template-rows: min-content
+      - column-gap: 7px
+
+list_items_line:
+  styles:
+    card:
+      - box-shadow: none
+      - padding: 0px
+    grid:
+      - grid-template-areas: '"item1 item2 item3"'
+      - grid-template-columns: max-content max-content max-content
+      - grid-template-rows: min-content
+      - column-gap: 8px
+
+### Icon Info Line ###
+
+icon_info_line:
+  show_icon: true
+  show_name: false
+  show_label: true
+  size: 100%
+  styles:
+    card:
+      - box-shadow: none
+      - padding: 0px
+    grid:
+      - grid-template-areas: '"i l"'
+      - grid-template-columns: max_content auto
+      - grid-template-rows: min-content
+    icon:
+      - filter: opacity(40%)
+    img_cell:
+      - place-self: center
+      - width: 14px
+      - height: 24px
+    label:
+      - padding: 2px
+      - justify-self: start
+      - align-self: center
+      - font-weight: bolder
+      - font-size: 12px
+      - margin-left: 0px
+      - filter: opacity(40%)

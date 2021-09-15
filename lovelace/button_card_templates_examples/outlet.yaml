@@ -1,0 +1,13 @@
+### Outlet ###
+- entity: switch.YOUR_SWITCH_ENTITY
+  name: Prise
+  template: 
+    - icon_info_bg
+    - outlet
+  label: >
+      [[[ if (entity.state =='on')
+          var etat = "On • " + states["sensor.YOUR_SWITCH_POWER_SENSOR"].state + "W"; 
+          else
+        var etat = "Off";
+      return etat ; ]]]
+  type: 'custom:button-card'

@@ -49,9 +49,9 @@ chips_power_consumption:
   tap_action:
     action: navigate
     navigation_path: /lovelace/consumption
-  label: |
+  label: >
     [[[
-      var price = states['sensor.atome_price_conso_today'].state;
+      var price = states['sensor.YOUR_SENSOR'].state;
       return '⚡ ' +  price + '€' ;
     ]]]
 
@@ -64,11 +64,11 @@ chips_power_consumption_price:
   tap_action:
     action: navigate
     navigation_path: /lovelace/consumption
-  label: |
+  label: >
     [[[
-      var price = states['sensor.atome_price_conso_today'].state;
-      var conso = states['sensor.atome_daily'].state;
-      return '⚡ ' +  price + '€ • ' + conso + 'kWh';
+      var price = states['sensor.YOUR_PRICE_SENSOR'].state;
+      var consumption = states['sensor.YOUR_POWER_CONSUMPTION_SENSOR'].state;
+      return '⚡ ' +  price + '€ • ' + consumption + 'kWh';
     ]]]
 
 ### Chips Temperature ###
@@ -77,10 +77,10 @@ chips_temperature:
   tap_action:
     action: navigate
     navigation_path: /lovelace/temperature
-  label: |
+  label: >
     [[[
-      var inter = states['sensor.fibaro_multisensor_salon_temperature'].state;
-      var exter = states['sensor.fibaro_multisensor_balcon_temperature'].state;
+      var indoor  = states['sensor.YOUR_INDOOR_TEMP_SENSOR'].state;
+      var outdoor = states['sensor.YOUR_OUTDOOR_TEMP_SENSOR'].state;
       var icon = '☀️';
       if (states['sensor.dark_sky_icon'].state == 'clear-day'){
         var icon = '☀️';
@@ -103,7 +103,7 @@ chips_temperature:
       } else if(states['sensor.dark_sky_icon'].state == 'partly-cloudy-night'){
         var icon = '⛅';
       }
-      return icon + ' ' + exter + '° / ' +  inter + '°' ;
+      return icon + ' ' + outdoor + '° / ' +  indoor  + '°' ;
     ]]]
 
 ### Chips location Present ###
@@ -111,9 +111,9 @@ chips_location_present:
   tap_action:
     action: navigate
     navigation_path: /lovelace/location
-  label: |
+  label: >
     [[[
-      var person_presence = states['sensor.people_count_present'].state;
+      var person_presence = states['sensor.YOUR_PRESENT_COUNT_SENSOR'].state;
       return '🏠 ' +  person_presence;
     ]]]
   template: chips
@@ -123,31 +123,26 @@ chips_location_absent:
   tap_action:
     action: navigate
     navigation_path: /lovelace/location
-  label: |
+  label: >
     [[[
-      var person_presence = states['sensor.people_count_absent'].state;
+      var person_presence = states['sensor.YOUR_ABSENT_COUNT_SENSOR'].state;
       return '🚶 ' +  person_presence;
     ]]]
   template: chips
 
-### chips_location_night
+### Chips Location Night ###
 chips_location_night:
   template: chips
   tap_action:
     action: navigate
     navigation_path: /lovelace/location
-  label: |
+  label: >
     [[[
-      var person_presence = states['sensor.people_count_night'].state;
+      var person_presence = states['sensor.YOUR_NIGHT_COUNT_SENSOR'].state;
       return '🌙 ' +  person_presence;
     ]]]
 
-####################################################
-#                                                  #
-#                    RETURN                        #
-#                                                  #
-####################################################
-
+### Chips Return ###
 chips_return:
   template: chips
   show_icon: true
@@ -158,4 +153,7 @@ chips_return:
       - grid-template-areas: '"i"'
   tap_action:
     action: navigate
-    navigation_path: /lovelace/home
+    navigation_path: >
+      [[[
+      return window.location.pathname.split('/')[1]
+      ]]]

@@ -1,0 +1,12 @@
+
+### Chips Location Night ###
+chips_location_night:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: >
+    [[[
+      var person_presence = states['sensor.YOUR_NIGHT_COUNT_SENSOR'].state;
+      return '🌙 ' +  person_presence;
+    ]]]

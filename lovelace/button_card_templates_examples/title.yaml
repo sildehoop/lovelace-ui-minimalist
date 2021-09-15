@@ -1,0 +1,5 @@
+### Title ###
+- type: 'custom:button-card'
+  name: Title
+  label: 'Subtitle'
+  template: title

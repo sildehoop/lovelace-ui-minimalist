@@ -1,0 +1,6 @@
+### Playstation ###
+- entity: media_player.example
+  template: 
+    - icon_info_bg
+    - ps4
+  type: 'custom:button-card'

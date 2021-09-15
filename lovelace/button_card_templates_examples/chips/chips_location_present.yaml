@@ -1,0 +1,3 @@
+### Chips location Present ###
+- template: chips_location_present
+  type: 'custom:button-card'

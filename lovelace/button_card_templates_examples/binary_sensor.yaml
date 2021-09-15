@@ -1,0 +1,8 @@
+### Binary Sensor ###
+- type: 'custom:button-card'
+  entity: binary_sensor.example
+  name: Mouvement
+  icon: 'mdi:run'
+  template: 
+    - icon_info_bg
+    - binary_sensor

@@ -1,0 +1,7 @@
+### Water Heater ###
+- type: 'custom:button-card'
+  entity: switch.example
+  name: Chauffe eau
+  template: 
+    - icon_info_bg
+    - water_heater

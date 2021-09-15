@@ -1,0 +1,6 @@
+### Scene ###
+- entity: sensor.present
+  template: scene_blue
+  variables:
+    state: "Present"
+  type: 'custom:button-card'

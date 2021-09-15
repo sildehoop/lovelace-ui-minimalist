@@ -1,0 +1,3 @@
+### Chips Temperature ###
+- template: chips_temperature
+  type: 'custom:button-card'

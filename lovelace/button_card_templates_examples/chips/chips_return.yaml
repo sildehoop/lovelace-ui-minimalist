@@ -1,0 +1,15 @@
+### Chips Return ###
+chips_return:
+  template: chips
+  show_icon: true
+  icon: "mdi:arrow-left"
+  size: 80%
+  styles:
+    grid:
+      - grid-template-areas: '"i"'
+  tap_action:
+    action: navigate
+    navigation_path: >
+      [[[
+      return window.location.pathname.split('/')[1]
+      ]]]
