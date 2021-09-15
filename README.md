@@ -763,33 +763,6 @@ outlet:
       - text-transform: capitalize
   template:
     - yellow
-
-
-# - entity: switch.exemple
-#   name: Prise
-#   template: 
-#     - icon_info_bg
-#     - outlet
-#   label: |-
-#       [[[ if (entity.state =='on')
-#           var etat = "On • " + states["sensor.exemple"].state + "W"; 
-#           else
-#         var etat = "Off";
-#       return etat ; ]]]
-#   type: 'custom:button-card'
-
-### Outlet ###
-# outlet:
-#   tap_action:
-#     action: more-info
-#   label: >
-#     [[[ if (entity.state =='on')
-#         var etat = "On";
-#         else
-#       var etat = "Off";
-#     return etat ; ]]]
-#   template: 
-#     - yellow
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
