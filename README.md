@@ -1,3 +1,6 @@
+
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace-ui-minimalist/lovelace/resources/resources.yaml) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
 # My Home Assistant
 At the top of each page we find the [chips](#chips) which allow me to quickly visualize the important information of the page.
 Then [title](#title) to separate the different sections
