@@ -326,13 +326,13 @@ I tried to set up a consistency between the colors used to represent the entitie
 <tr>
 <td VALIGN=TOP>
 
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates_examples/light_slider.yaml) -->
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates_examples/lights/light_slider.yaml) -->
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
 </td>
 <td VALIGN=TOP>
 
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates/light_slider.yaml) -->
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates/lights/light_slider.yaml) -->
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
 </td>
