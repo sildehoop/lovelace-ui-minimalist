@@ -3,4 +3,4 @@
   template: cover_buttons
   variables:
     entity: "cover.example"
-    name: "Volets" #if left empty it wil use entity friendly name
+    name: "YOUR_CUSTOM_NAME" #If left empty it wil use entity friendly name
