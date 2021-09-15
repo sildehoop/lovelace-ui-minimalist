@@ -13,4 +13,4 @@ jobs:
         - name: Markdown autodocs
           uses: dineshsonachalam/markdown-autodocs@v1.0.4
           with:
-            output_file_paths: '[./README.md,./docs/example.md]'
+            output_file_paths: '[./README.md]'
