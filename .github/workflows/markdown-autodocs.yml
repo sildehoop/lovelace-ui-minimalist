@@ -3,6 +3,8 @@ name: markdown-autodocs
 on:
   push:
     paths:
+      - 'lovelace/button_card_templates/**'
+      - 'lovelace/button_card_templates_examples/**'
       - 'README.md'
 
 jobs:        
