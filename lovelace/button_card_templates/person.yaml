@@ -89,7 +89,7 @@ person_invite:
   tap_action:
     action: more-info
   show_label: true
-  label: |-
+  label: >
     [[[ if (entity.state =='on')
        var state = "Present"; 
        else

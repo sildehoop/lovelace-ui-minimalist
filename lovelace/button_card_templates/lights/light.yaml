@@ -1,0 +1,30 @@
+### Light ###
+light:
+  name: >
+    [[[
+      if (variables.name == "DEFAULT NAME")
+        return entity.attributes.friendly_name;
+      if (variables.name == "")
+        return entity.attributes.friendly_name;
+      else
+        return variables.name;
+    ]]]
+  tap_action:
+    action: toggle
+  hold_action:
+    action: more-info
+  label: >
+    [[[ if (entity.state !='unavailable'){
+          if (entity.state =='off'){
+            var bri = Math.round(entity.attributes.brightness / 2.55);
+            return 'Off';  
+          }else{
+            var bri = Math.round(entity.attributes.brightness / 2.55);
+            return (bri ? bri : '0') + '%'; 
+          }
+        }else{
+          return "Indisponible";
+        }
+    ]]]
+  template:
+    - yellow

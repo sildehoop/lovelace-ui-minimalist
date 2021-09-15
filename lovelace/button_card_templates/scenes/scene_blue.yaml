@@ -1,0 +1,23 @@
+### Scene Blue ###
+scene_blue:
+  variables:
+    state: "default"
+  template:
+    - scene
+  state:
+    - operator: template
+      value: >
+        [[[
+          return states['input_select.location_thomas'].state == variables.state
+        ]]]
+      styles:
+        icon:
+          - color: "rgba(var(--color-blue),1)"
+        img_cell:
+          - background-color: "rgba(var(--color-blue), 0.2)"
+        card:
+          - background-color: "rgba(var(--color-background-blue), var(--opacity-bg))"
+        name:
+          - color: "rgba(var(--color-blue-text),1)"
+        label:
+          - color: "rgba(var(--color-blue-text),1)"

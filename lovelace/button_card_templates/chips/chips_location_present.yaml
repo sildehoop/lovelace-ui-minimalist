@@ -1,0 +1,12 @@
+
+### Chips location Present ###
+chips_location_present:
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: >
+    [[[
+      var person_presence = states['sensor.YOUR_PRESENT_COUNT_SENSOR'].state;
+      return '🏠 ' +  person_presence;
+    ]]]
+  template: chips

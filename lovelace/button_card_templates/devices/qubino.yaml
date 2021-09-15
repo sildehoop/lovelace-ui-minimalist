@@ -4,7 +4,7 @@ qubino:
   tap_action:
     action: more-info
     entity: input_select.ordres_fil_pilote
-  label: >-
+  label: >
     [[[ if (entity.state !='unavailable'){
           var bri = Math.round(entity.attributes.brightness / 2.55);
           var bri = (bri ? bri : '0')

@@ -1,0 +1,11 @@
+### Chips Power Consumption ###
+chips_power_consumption:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/consumption
+  label: >
+    [[[
+      var price = states['sensor.YOUR_SENSOR'].state;
+      return '⚡ ' +  price + '€' ;
+    ]]]

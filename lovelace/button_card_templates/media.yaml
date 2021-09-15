@@ -1,13 +1,13 @@
 ### Media ###
 media:
-  label: >-
+  label: >
     [[[ if (entity.state =='off'){
           return "Off";
         }else{
           return entity.state;
         }
     ]]]
-  icon: |
+  icon: >
     [[[
         var application = entity.attributes.app_name;
         var icon = 'mdi:speaker';
@@ -69,7 +69,7 @@ media:
 
 ### Media Mini Album ###
 media_mini_album:
-  label: >-
+  label: >
     [[[ if (entity.state =='off'){
           return "Off";
         }else{

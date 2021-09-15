@@ -1,9 +1,9 @@
 ### Graph ###
 graph:
   variables:
-    entity: "sensor.xiaomi_multisensor_salon_humidite"
+    entity: "sensor.YOUR_SENSOR"
+    name: "DEFAULT NAME"
     color: "var(--info-color)"
-    name: "Default name"
   styles:
     card:
       - border-radius: var(--border-radius)
@@ -17,7 +17,8 @@ graph:
     item1:
       card:
         entity: "[[[ return variables.entity ]]]"
-        name: "[[[ return variables.name ]]]"
+        variables:
+          name: "[[[ return variables.name ]]]"
         template:
           - icon_info
           - generic
@@ -36,7 +37,7 @@ graph:
           icon: false
           legend: false
           state: false
-        style: |
+        style: >
           ha-card {
             box-shadow: none;
             border-radius: var(--border-radius);

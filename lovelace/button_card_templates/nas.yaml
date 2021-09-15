@@ -3,7 +3,7 @@ nas:
   tap_action:
     action: more-info
   show_label: true
-  label: |-
+  label: >
     [[[ if (entity.state =='on')
        var state = states["sensor.nas_volume_1_used_space"].state + "/3.5To"; 
        else

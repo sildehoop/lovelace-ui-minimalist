@@ -3,7 +3,7 @@ thermostat:
   hold_action:
     action: more-info
     entity: input_boolean.radiateur_arret_force
-  label: >-
+  label: >
     [[[ 
         if (entity.state =='off'){
           return 'Off' ;

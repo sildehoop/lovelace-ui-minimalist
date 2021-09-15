@@ -1,0 +1,34 @@
+### Chips Temperature ###
+chips_temperature:
+  template: chips
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/temperature
+  label: >
+    [[[
+      var indoor  = states['sensor.YOUR_INDOOR_TEMP_SENSOR'].state;
+      var outdoor = states['sensor.YOUR_OUTDOOR_TEMP_SENSOR'].state;
+      var icon = '☀️';
+      if (states['sensor.dark_sky_icon'].state == 'clear-day'){
+        var icon = '☀️';
+      } else if(states['sensor.dark_sky_icon'].state == 'clear-night'){
+        var icon = '🌙';
+      } else if(states['sensor.dark_sky_icon'].state == 'rain'){
+        var icon = '🌧️';
+      } else if(states['sensor.dark_sky_icon'].state == 'snow'){
+        var icon = '❄️';
+      } else if(states['sensor.dark_sky_icon'].state == 'sleet'){
+        var icon = '❄️';
+      } else if(states['sensor.dark_sky_icon'].state == 'wind'){
+        var icon = '🌫️';
+      } else if(states['sensor.dark_sky_icon'].state == 'fog'){
+        var icon = '🌫️';
+      } else if(states['sensor.dark_sky_icon'].state == 'cloudy'){
+        var icon = '☁️';
+      } else if(states['sensor.dark_sky_icon'].state == 'partly-cloudy-day'){
+        var icon = '⛅️';
+      } else if(states['sensor.dark_sky_icon'].state == 'partly-cloudy-night'){
+        var icon = '⛅';
+      }
+      return icon + ' ' + outdoor + '° / ' +  indoor  + '°' ;
+    ]]]

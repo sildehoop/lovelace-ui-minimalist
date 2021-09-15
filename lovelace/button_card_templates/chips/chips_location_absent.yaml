@@ -1,0 +1,11 @@
+### Chips location Absent ###
+chips_location_absent:
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/location
+  label: >
+    [[[
+      var person_presence = states['sensor.YOUR_ABSENT_COUNT_SENSOR'].state;
+      return '🚶 ' +  person_presence;
+    ]]]
+  template: chips

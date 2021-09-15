@@ -1,29 +1,7 @@
-### Light ###
-light:
-  tap_action:
-    action: toggle
-  hold_action:
-    action: more-info
-  label: >-
-    [[[ if (entity.state !='unavailable'){
-          if (entity.state =='off'){
-            var bri = Math.round(entity.attributes.brightness / 2.55);
-            return 'Off';  
-          }else{
-            var bri = Math.round(entity.attributes.brightness / 2.55);
-            return (bri ? bri : '0') + '%'; 
-          }
-        }else{
-          return "Indisponible";
-        }
-    ]]]
-  template:
-    - yellow
-
 ### Light Slider ###
 light_slider:
   variables:
-    name: "Default name"
+    name: "DEFAULT NAME"
   show_icon: false
   show_name: false
   show_label: false
@@ -50,7 +28,8 @@ light_slider:
     item1:
       card:
         entity: "[[[ return variables.entity ]]]"
-        name: "[[[ return variables.name ]]]"
+        variables:
+          name: "[[[ return variables.name ]]]"
         template:
           - icon_info
           - light
@@ -69,7 +48,7 @@ light_slider:
         thumbVerticalPadding: "0px"
         thumbWidth: 0px
         card_mod:
-        style: |
+        style: >
           ha-card {
             border-radius: 14px;
             box-shadow: none;

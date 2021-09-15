@@ -1,0 +1,15 @@
+### Chips Power Consumption Price ###
+chips_power_consumption_price:
+  template: chips
+  show_icon: false
+  show_state: false
+  show_label: true
+  tap_action:
+    action: navigate
+    navigation_path: /lovelace/consumption
+  label: >
+    [[[
+      var price = states['sensor.YOUR_PRICE_SENSOR'].state;
+      var consumption = states['sensor.YOUR_POWER_CONSUMPTION_SENSOR'].state;
+      return '⚡ ' +  price + '€ • ' + consumption + 'kWh';
+    ]]]

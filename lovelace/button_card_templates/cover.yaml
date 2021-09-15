@@ -1,17 +1,25 @@
 ### Cover ###
 cover:
+  name: >
+    [[[
+      if (variables.name == "DEFAULT NAME")
+        return entity.attributes.friendly_name;
+      if (variables.name == "")
+        return entity.attributes.friendly_name;
+      else
+        return variables.name;
+    ]]]
   tap_action:
     action: more-info
-  icon: |
+  icon: >
     [[[
-        var icon = 'mdi:window-shutter';
         if (entity.attributes.current_position == 0){
           var icon = 'mdi:window-shutter';
         } else
           var icon = 'mdi:window-shutter-open';
         return icon ;
     ]]]
-  label: >-
+  label: >
     [[[ 
         if (entity.attributes.current_position == 0){
           var state = "Closed";
@@ -35,8 +43,8 @@ cover:
 ### Cover Buttons ###
 cover_buttons:
   variables:
-    entity: "cover.fibaro_cover_balcon"
-    name: "Default name"
+    entity: "cover.YOUR_COVER_ENTITY"
+    name: "DEFAULT_NAME"
   styles:
     card:
       - border-radius: var(--border-radius)
@@ -51,7 +59,8 @@ cover_buttons:
     item1:
       card:
         entity: "[[[ return variables.entity ]]]"
-        name: "[[[ return variables.name ]]]"
+        variables:
+          name: "[[[ return variables.name ]]]"
         tap_action:
           action: more-info
         template:

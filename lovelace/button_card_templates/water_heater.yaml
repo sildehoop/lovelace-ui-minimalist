@@ -6,7 +6,7 @@ water_heater:
     action: more-info
   hold_action:
     action: more-info
-  label: >-
+  label: >
     [[[ 
         if (entity.state == 'off'){
           return 'Arrêt forcé';

@@ -1,6 +1,6 @@
 ### Playstation ###
 ps4:
-  label: >-
+  label: >
     [[[ 
       return entity.state
     ]]]

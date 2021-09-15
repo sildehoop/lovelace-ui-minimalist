@@ -1,5 +1,14 @@
 ### Generic ###
 generic:
+  name: >
+    [[[
+      if (variables.name == "DEFAULT NAME")
+        return entity.attributes.friendly_name;
+      if (variables.name == "")
+        return entity.attributes.friendly_name;
+      else
+        return variables.name;
+    ]]]
   label: >
     [[[return entity.state + " " + entity.attributes.unit_of_measurement]]]
   styles:
