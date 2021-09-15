@@ -1,9 +1,9 @@
 ### Person ###
-- entity: input_select.location_thomas
+- type: 'custom:button-card'
+  entity: input_select.location_thomas
+  name: Thomas
   variables:
     personne: "thomas"
   template: 
     - icon_info_bg
     - personne-thomas
-  name: Thomas
-  type: 'custom:button-card'

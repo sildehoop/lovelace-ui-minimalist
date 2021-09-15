@@ -35,12 +35,3 @@ door:
           - color: "rgba(var(--color-blue),1)"
         img_cell:
           - background-color: "rgba(var(--color-blue),0.2)"
-
-
-
-# - type: "custom:button-card"
-#   entity: binary_sensor.bedroom_master_closed_door
-#   name: YOUR_CUSTOM_NAME
-#   template:
-#     - icon_info_bg
-#     - door

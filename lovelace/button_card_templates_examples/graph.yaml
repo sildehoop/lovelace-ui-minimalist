@@ -1,7 +1,7 @@
 ### Graph ###
 - type: 'custom:button-card'
-  template: graph
   variables:
     entity: "sensor.exemple"
     color: "var(--google-blue)"
     name: "Température"
+  template: graph

@@ -1,41 +1,6 @@
 ### Room ###
-room:
-  name: ROOM NAME
-  icon: mdi:home
+- type: "custom:button-card"
+  name: Woonkamer
+  template: room
   variables:
-    path: >
-      [[[
-        return window.location.pathname
-      ]]]
-  tap_action:
-    action: navigate
-    navigation_path: >
-      [[[ 
-      return variables.path
-      ]]]
-  size: 20px
-  show_label: false
-  styles:
-    card:
-      - background-color: "rgba(var(--color-background-blue), var(--opacity-bg))"
-      - border-radius: var(--border-radius)
-      - box-shadow: var(--box-shadow)
-      - padding: 10px 0px 8px 0px
-    grid:
-      - grid-template-areas: '"i" "n" "l"'
-    name:
-      - color: "rgba(var(--color-blue-text),1)"
-      - margin-top: 10px
-      - justify-self: center
-      - font-weight: bold
-      - font-size: 14px
-    icon:
-      - color: "rgba(var(--color-blue),1)"
-    img_cell:
-      - background-color: "rgba(var(--color-blue), 0.2)"
-      - border-radius: 50%
-      - place-self: center
-      - width: 42px
-      - height: 42px
-    label:
-      - color: "rgba(var(--color-blue-text),1)"
+    path: "/lovelace-yaml/living-room" # path were to navigate to  
