@@ -729,10 +729,10 @@ light_slider:
   name: Prise
   label: >
       [[[ if (entity.state =='on')
-          var etat = "On • " + states["sensor.YOUR_SWITCH_POWER_SENSOR"].state + "W"; 
+          var state = "On • " + states["sensor.YOUR_SWITCH_POWER_SENSOR"].state + "W"; 
           else
-        var etat = "Off";
-      return etat ; ]]]
+        var state = "Off";
+      return state ; ]]]
   template: 
     - icon_info_bg
     - outlet
@@ -1755,9 +1755,9 @@ generic:
 ### Graph ###
 - type: 'custom:button-card'
   variables:
-    entity: "sensor.exemple"
+    entity: "sensor.YOUR_SENSOR"
     color: "var(--google-blue)"
-    name: "Température"
+    name: "Temperature"
   template: graph
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
