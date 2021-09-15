@@ -1,27 +1,3 @@
-
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/resources/resources.yaml) -->
-<!-- The below code snippet is automatically added from ./lovelace/resources/resources.yaml -->
-```yaml
-  - type: module
-    url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-  - type: module
-    url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
-  - type: module
-    url: /hacsfiles/button-card/button-card.js
-  - type: module
-    url: /hacsfiles/lovelace-card-mod/card-mod.js
-  - type: module
-    url: /hacsfiles/swipe-card/swipe-card.js
-  - type: module
-    url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
-  - type: module
-    url: /hacsfiles/lovelace-state-switch/state-switch.js
-  - type: module
-    url: /hacsfiles/lovelace-auto-entities/auto-entities.js
-  - type: module
-    url: /hacsfiles/ha-slider-card/slider-card.js
-```
-<!-- MARKDOWN-AUTO-DOCS:END -->
 # My Home Assistant
 At the top of each page we find the [chips](#chips) which allow me to quickly visualize the important information of the page.
 Then [title](#title) to separate the different sections
