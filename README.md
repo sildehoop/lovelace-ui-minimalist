@@ -564,7 +564,7 @@ title:
 ### Light ###
 - type: "custom:button-card"
   entity: light.YOUR_LIGHT_ENTITY
-  name: Light #if left empty it wil use entity friendly name
+  name: YOUR_CUSTOM_NAME #If left empty it wil use entity friendly name
   template:
     - icon_info_bg
     - light
@@ -941,7 +941,7 @@ door:
   template: cover_buttons
   variables:
     entity: "cover.example"
-    name: "Volets" #if left empty it wil use entity friendly name
+    name: "YOUR_CUSTOM_NAME" #If left empty it wil use entity friendly name
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
