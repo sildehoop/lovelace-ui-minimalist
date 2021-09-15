@@ -937,12 +937,11 @@ door:
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/cover.yaml -->
 ```yaml
 ### Cover ###
-- type: "custom:button-card"
-  entity: binary_sensor.YOUR_DOOR_SENSOR
-  name: YOUR_CUSTOM_NAME
-  template:
-    - icon_info_bg
-    - door
+- type: 'custom:button-card'
+  template: cover_buttons
+  variables:
+    entity: "cover.example"
+    name: "Volets" #if left empty it wil use entity friendly name
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
