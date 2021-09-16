@@ -836,7 +836,7 @@ binary_sensor:
 ```yaml
 ### Door ###
 - type: "custom:button-card"
-  entity: binary_sensor.bedroom_master_closed_door
+  entity: binary_sensor.YOUR_SENSOR
   name: YOUR_CUSTOM_NAME
   template:
     - icon_info_bg
@@ -852,8 +852,6 @@ binary_sensor:
 ```yaml
 ### Door ###
 door:
-  tap_action:
-    action: more-info
   icon: >
     [[[
       if (entity.state == "off")
@@ -909,13 +907,13 @@ door:
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates_examples/window.yaml) -->
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/window.yaml -->
 ```yaml
-### Door ###
+### Window ###
 - type: "custom:button-card"
-  entity: binary_sensor.bedroom_master_closed_door
+  entity: binary_sensor.YOUR_SENSOR
   name: YOUR_CUSTOM_NAME
   template:
     - icon_info_bg
-    - door
+    - window
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
@@ -925,20 +923,18 @@ door:
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates/window.yaml) -->
 <!-- The below code snippet is automatically added from ./lovelace/button_card_templates/window.yaml -->
 ```yaml
-### Door ###
-door:
-  tap_action:
-    action: more-info
+### Window ###
+window:
   icon: >
     [[[
       if (entity.state == "off")
-        return "mdi:door-closed";
+        return "mdi:window-closed";
       if (entity.state == "closed")
-        return "mdi:door-closed";
+        return "mdi:window-closed";
       if (entity.state == "on")
-        return "mdi:door-open";
+        return "mdi:window-open";
       if (entity.state == "open")
-        return "mdi:door-open";
+        return "mdi:window-open";
       else
         return "mdi:alert-circle";
     ]]]
@@ -1758,7 +1754,7 @@ person_invite:
 ```yaml
 ### Generic ###
 - type: 'custom:button-card'
-  entity: sensor.example
+  entity: sensor.YOUR_SENSOR
   template: 
     - icon_info_bg
     - generic
