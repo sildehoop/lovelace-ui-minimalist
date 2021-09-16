@@ -1,7 +1,5 @@
 ### Door ###
 door:
-  tap_action:
-    action: more-info
   icon: >
     [[[
       if (entity.state == "off")
