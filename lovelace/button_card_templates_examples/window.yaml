@@ -1,0 +1,7 @@
+### Window ###
+- type: "custom:button-card"
+  entity: binary_sensor.YOUR_SENSOR
+  name: YOUR_CUSTOM_NAME
+  template:
+    - icon_info_bg
+    - window
