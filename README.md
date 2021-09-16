@@ -101,7 +101,7 @@ I tried to set up a consistency between the colors used to represent the entitie
 
 
 # Chips
-![Chips](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/chips.png)
+![Chips](screenshots/chips.png)
 <details><summary>Code template</summary>
 <table>
 <tr>
@@ -148,7 +148,7 @@ chips:
 </details>
 
 ## Temperature
-![Chips - Temperature](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/chips_temperature.png)
+![Chips - Temperature](screenshots/chips_temperature.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -216,7 +216,7 @@ chips_temperature:
 </details>
 
 ## Electric consumption
-![Chips - consumption](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/power_consumption.png)
+![Chips - consumption](screenshots/power_consumption.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -259,10 +259,10 @@ chips_power_consumption:
 <td VALIGN=TOP>
 </tr>
 </table>
-</details>
+</details>****
 
 ## Presence counter
-![Chips - Present](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/chips_location_present.png)
+![Chips - Present](screenshots/chips_location_present.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -307,7 +307,7 @@ chips_location_present:
 </details>
 
 ## Return button
-![Chips - return](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/chips_return.png)
+![Chips - return](screenshots/chips_return.png)
 
 <details><summary>Code</summary>
 <table>
@@ -471,7 +471,7 @@ scene_blue:
 </details>
 
 # Title
-![Title](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/title.png)
+![Title](screenshots/title.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -536,10 +536,10 @@ title:
 </details>
 
 # Cards
-![Cards](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/cards.png)
+![Cards](screenshots/cards.png)
 
 ### Anatomy
-![Anatomy](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/anatomy.png)
+![Anatomy](screenshots/anatomy.png)
 1. **Dot** : Visible when the device is unavailable. Also used on the entity **person**
 2. **Icon** : Icon that represents the device
 3. **Primary line** : Main information
@@ -548,7 +548,7 @@ title:
 
 
 ## Light
-![Light](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/light.png) 
+![Light](screenshots/light.png) 
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -616,7 +616,7 @@ light:
 </details>
 
 ## Light slider
-![Light-slider](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/light_slider.png) 
+![Light-slider](screenshots/light_slider.png) 
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -710,7 +710,7 @@ light_slider:
 </details>
 
 ## Outlet
-![Prise](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/outlet.png)
+![Prise](screenshots/outlet.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -772,7 +772,7 @@ outlet:
 </details>
 
 ## Binary sensor
-![Mouvements](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/binary_sensor-1.png) ![Fenêtres](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/binary_sensor-2.png)
+![Mouvements](screenshots/binary_sensor-1.png) ![Fenêtres](screenshots/binary_sensor-2.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -821,7 +821,7 @@ binary_sensor:
 </details>
 
 ## Door sensor
-![Mouvements](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/binary_sensor-1.png) ![Fenêtres](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/binary_sensor-2.png)
+![Door](screenshots/door.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -895,8 +895,83 @@ door:
 </table>
 </details>
 
+## Window sensor
+![Window](screenshots/window.png)
+<details><summary>Code</summary>
+<table>
+<tr>
+<th> Example </th>
+<th> Template </th>
+</tr>
+<tr>
+<td VALIGN=TOP>
+
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates_examples/window.yaml) -->
+<!-- The below code snippet is automatically added from ./lovelace/button_card_templates_examples/window.yaml -->
+```yaml
+### Door ###
+- type: "custom:button-card"
+  entity: binary_sensor.bedroom_master_closed_door
+  name: YOUR_CUSTOM_NAME
+  template:
+    - icon_info_bg
+    - door
+```
+<!-- MARKDOWN-AUTO-DOCS:END -->
+
+</td>
+<td VALIGN=TOP>
+
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./lovelace/button_card_templates/window.yaml) -->
+<!-- The below code snippet is automatically added from ./lovelace/button_card_templates/window.yaml -->
+```yaml
+### Door ###
+door:
+  tap_action:
+    action: more-info
+  icon: >
+    [[[
+      if (entity.state == "off")
+        return "mdi:door-closed";
+      if (entity.state == "closed")
+        return "mdi:door-closed";
+      if (entity.state == "on")
+        return "mdi:door-open";
+      if (entity.state == "open")
+        return "mdi:door-open";
+      else
+        return "mdi:alert-circle";
+    ]]]
+  label: >
+    [[[
+      if (entity.state == "off")
+        return "Closed";
+      if (entity.state == "on")
+        return "Open";
+      else
+        return "Unknown";
+    ]]]
+  state:
+    - operator: template
+      value: >
+        [[[
+          return entity.state == "on";
+        ]]]
+      styles:
+        icon:
+          - color: "rgba(var(--color-blue),1)"
+        img_cell:
+          - background-color: "rgba(var(--color-blue),0.2)"
+```
+<!-- MARKDOWN-AUTO-DOCS:END -->
+
+</td>
+</tr>
+</table>
+</details>
+
 ## Cover
-![Volets](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/cover_buttons.png)
+![Volets](screenshots/cover_buttons.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1037,7 +1112,7 @@ cover_buttons:
 </details>
 
 ## Thermostat
-![Thermostat](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/thermostat.png)
+![Thermostat](screenshots/thermostat.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1109,7 +1184,7 @@ thermostat:
 </details>
 
 ## Water heater
-![Chauffe-eau](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/water-heater.png)
+![Chauffe-eau](screenshots/water-heater.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1185,7 +1260,7 @@ water_heater:
 </details>
 
 ## Media player
-![Enceintes](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/media.png)
+![Enceintes](screenshots/media.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1390,7 +1465,7 @@ media_buttons:
 </details>
 
 ## Playstation
-![Playstation](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/playstation.png)
+![Playstation](screenshots/playstation.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1483,7 +1558,7 @@ ps4:
 </details>
 
 ## Person
-![Personne](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/person.png)
+![Personne](screenshots/person.png)
 <details><summary>Information</summary>
     
 **Dot** : 
@@ -1668,7 +1743,7 @@ person_invite:
 </details>
 
 ## Generic
-![Generic](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/generic.png)
+![Generic](screenshots/generic.png)
 <details><summary>Code</summary>
 <table>
 <tr>
@@ -1739,7 +1814,7 @@ generic:
 </details>
 
 ## Generic + graph
-![Entity - graph](https://raw.githubusercontent.com/sildehoop/lovelace-ui-minimalist/main/screenshots/entity_graph.png)
+![Entity - graph](screenshots/entity_graph.png)
 <details><summary>Code</summary>
 <table>
 <tr>
