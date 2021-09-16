@@ -1,6 +1,6 @@
 ### Door ###
 - type: "custom:button-card"
-  entity: binary_sensor.bedroom_master_closed_door
+  entity: binary_sensor.YOUR_SENSOR
   name: YOUR_CUSTOM_NAME
   template:
     - icon_info_bg
