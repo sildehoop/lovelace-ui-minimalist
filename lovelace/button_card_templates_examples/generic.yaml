@@ -1,6 +1,6 @@
 ### Generic ###
 - type: 'custom:button-card'
-  entity: sensor.example
+  entity: sensor.YOUR_SENSOR
   template: 
     - icon_info_bg
     - generic
